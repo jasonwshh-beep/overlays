@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kick Vote Bot Dashboard</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="dashboard">
+    <section class="hero">
+      <div>
+        <h1>Kick Vote Bot</h1>
+        <p id="status">Connecting...</p>
+      </div>
+      <div class="pill" id="lockState">Unlocked</div>
+    </section>
+
+    <section class="scoreboard">
+      <div class="side">
+        <h2>Vote 1</h2>
+        <div class="count" id="side1">0</div>
+      </div>
+      <div class="side">
+        <h2>Vote 2</h2>
+        <div class="count" id="side2">0</div>
+      </div>
+      <div class="side total">
+        <h2>Total</h2>
+        <div class="count" id="total">0</div>
+      </div>
+    </section>
+
+    <section class="controls">
+      <button onclick="post('/api/reset')">Reset Vote</button>
+      <button onclick="post('/api/lock')">Lock Vote</button>
+      <button onclick="post('/api/unlock')">Unlock</button>
+      <button onclick="correct('1')">Correct = 1</button>
+      <button onclick="correct('2')">Correct = 2</button>
+      <button class="winner" onclick="pickCorrect()">Pick Winner From Correct Side</button>
+      <button onclick="pickSide('1')">Pick From 1</button>
+      <button onclick="pickSide('2')">Pick From 2</button>
+      <a class="button" href="/api/export.csv">Export CSV</a>
+    </section>
+
+    <section class="columns">
+      <div class="panel">
+        <h3>Last Winner</h3>
+        <div id="winnerBox" class="bigText">None yet</div>
+      </div>
+      <div class="panel">
+        <h3>Recent Votes</h3>
+        <ul id="recent"></ul>
+      </div>
+    </section>
+  </main>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>
