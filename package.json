@@ -1,0 +1,15 @@
+{
+  "name": "kick-vote-bot",
+  "version": "1.0.0",
+  "description": "Local Kick chat vote tracker with OBS overlay and winner picker",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "socket.io": "^4.7.5",
+    "ws": "^8.18.0"
+  }
+}
