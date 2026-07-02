@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kick Vote Overlay</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body class="overlayBody">
+  <div class="overlay">
+    <div class="overlayTitle">TYPE <b>!vote 1</b> OR <b>!vote 2</b></div>
+    <div class="barWrap">
+      <div class="bar one" id="bar1" style="width:50%"><span id="label1">1 — 0</span></div>
+      <div class="bar two" id="bar2" style="width:50%"><span id="label2">2 — 0</span></div>
+    </div>
+    <div class="overlayFooter">
+      <span id="overlayStatus">LIVE</span>
+      <span id="overlayTotal">0 voters</span>
+      <span id="overlayWinner"></span>
+    </div>
+  </div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>
